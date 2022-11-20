@@ -85,6 +85,7 @@ export class RegstudenComponent  {
     var link = "http://172.177.150.81:1337/api/students";
     this._http.post(link,json).subscribe(res=>{
       alert("Se agrego El estudiate Existosamente");
+      location.reload();
     })
    }
 
