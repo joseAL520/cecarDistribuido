@@ -12,7 +12,7 @@ import { RegdocenteComponent } from './page/regdocente/regdocente.component';
 import { RegstudenComponent } from './page/regstuden/regstuden.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,13 +23,12 @@ import { HttpClient } from '@angular/common/http';
     SedececarComponent,
     RegdocenteComponent,
     RegstudenComponent
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

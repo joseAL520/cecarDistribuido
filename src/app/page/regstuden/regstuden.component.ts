@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -10,14 +11,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./regstuden.component.css']
 })
 
-
-export class RegstudenComponent implements OnInit {
+                              // implements OnInit
+export class RegstudenComponent  {
   checkFamale:boolean=false;
   checkMas:boolean=true;
-  createUsuario: FormGroup;
+  formulario!: FormGroup;
+  submitted=false;
+  studen : any=[];
+  //createUsuario: FormGroup;
 
-  constructor(private fb: FormBuilder) {
 
+ 
+ /* constructor(private fb: FormBuilder) {
+ 
     this.createUsuario = this.fb.group({
       Nombres: ['',Validators.required],
       Apellidos: ['',Validators.required],
@@ -27,14 +33,64 @@ export class RegstudenComponent implements OnInit {
       Nacimiento: ['',Validators.required]
       
     })
-  }
+  }*/
+ 
+
+  constructor (private _http:HttpClient, private formBuilder:FormBuilder){}
 
   ngOnInit(): void {
     
-  
+    this.formulario = this.formBuilder.group({ 
+      
+      Nombres: ['',[Validators.required]],
+      Apellidos: ['',[Validators.required]],
+      Tdocumento: ['',[Validators.required]],
+      Nacimiento: ['',[Validators.required]],
+      Direccion: ['',[Validators.required]],
+      EstadoCivil: ['',[Validators.required]]
+
+    });
+    
+   var link="http://172.177.150.81:1337/api/students/";
+
+   //leer en la Api
+    this._http.get(link).subscribe(res=>{
+      console.log(this.studen=res);
+    })
+
   }
  
-  agregarUsuario(){
+  /*para agregar un formulario
+  get f(){
+      return this.formulario.controls;
+  }
+  
+  */
+  
+
+  add(values: { Nombres: any; Apellidos: any; Tdocumento: any; Nacimiento: any; Direccion: any; EstadoCivil: any; }){
+    this.submitted=true;
+    if(this.formulario.invalid){
+     return;
+    } 
+    var json={
+     "eNombre":values.Nombres,
+     "eApellido":values.Apellidos,
+     "eTipodocumento":values.Tdocumento,
+     "eFechaNacimiento": values.Nacimiento,
+     "eDireccion": values.Direccion,
+     "eEstadoCivil": values.EstadoCivil
+    }
+
+    var link = "http://172.177.150.81:1337/api/students";
+    this._http.post(link,json).subscribe(res=>{
+      alert("Se agrego El estudiate Existosamente");
+    })
+   }
+
+
+ /*
+ agregarUsuario(){
     const usuario: any = {
       Nombres: this.createUsuario.value.Nombres,
       Apellidos: this.createUsuario.value.Apellidos,
@@ -46,7 +102,7 @@ export class RegstudenComponent implements OnInit {
     }
     console.log(usuario)
   }
-
+ */
   onCheckedMas(){
     this.checkMas = true;
     this.checkFamale = false;
