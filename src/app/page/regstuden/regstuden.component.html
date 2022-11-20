@@ -1,0 +1,71 @@
+
+<form class="m-4" [formGroup]="createUsuario" (ngSubmit)="agregarUsuario()">
+  <div class="container">
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" width="100px" height="100px">
+    <div class="con">
+
+      <div class="mb-3">
+        <label class="form-label form-genero">Tipo de Documento</label>
+        <select class="form-select" aria-label="Default select example" formControlName="Tdocumento" required>
+          <option value="cedula">Cedula de Ciudadania</option>
+          <option value="Tarjeta Identidad">Tarjeta Identidad</option>
+          <option value="Tarjeta Extranjera">Tarjeta Extranjera</option>
+        </select>
+      </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Numero ID</label>
+          <input type="text" class="form-control" formControlName="exampleInputEmail1">
+        </div>
+        <div class="mb-3">
+          <label for="Nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" formControlName="Nombres" required>
+        </div>
+        <div class="mb-3">
+          <label for="Apellidos" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" formControlName="Apellidos" required>
+        </div>
+
+        <div class="container-fluid" id="main-content">
+          <div class="container">
+              <div class="row">
+                  <div class="genero">
+                    <label for="Apellidos" class="form-label form-genero">Seleccione el Genero</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox"  id="flexCheckDefault" [checked]="checkMas" (click)="onCheckedMas()">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Masculino
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox"  id="flexCheckChecked" [checked]="checkFamale" (click)="onCheckedFamale()">
+                      <label class="form-check-label" for="flexCheckChecked">
+                        Femenino
+                      </label>
+                    </div>
+                    <div class="mb-3">
+                      <label for="Nacimiento" class="form-label form-genero">Fecha Nacimiento</label>
+                      <input type="date" class="form-control" formControlName="Nacimiento">
+                    </div>
+                </div>
+
+                </div>
+                  <div class="mb-3">
+                    <label for="Direccion" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" formControlName="Direccion">
+                  </div>
+
+                  <div class="mb-3">
+                    <label>Estado Civil</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="EstadoCivil" required>
+                      <option value="Soltero">Soltero</option>
+                      <option value="Casado">Casado</option>
+                    </select>
+                  </div>
+          </div>
+      </div>
+          <hr>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+</form>
