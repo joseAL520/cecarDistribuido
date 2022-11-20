@@ -12,6 +12,7 @@ import { RegdocenteComponent } from './page/regdocente/regdocente.component';
 import { RegstudenComponent } from './page/regstuden/regstuden.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { HttpClient } from '@angular/common/http';
 
 
 @NgModule({

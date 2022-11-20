@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -22,13 +23,15 @@ export class RegstudenComponent implements OnInit {
       Apellidos: ['',Validators.required],
       Tdocumento: ['',Validators.required],
       Direccion: ['',Validators.required],
-      EstadoCivil: ['',Validators.required]
+      EstadoCivil: ['',Validators.required],
+      Nacimiento: ['',Validators.required]
       
     })
   }
 
   ngOnInit(): void {
-   
+    
+  
   }
  
   agregarUsuario(){
@@ -36,9 +39,10 @@ export class RegstudenComponent implements OnInit {
       Nombres: this.createUsuario.value.Nombres,
       Apellidos: this.createUsuario.value.Apellidos,
       Tdocumento: this.createUsuario.value.Tdocumento,
-      Nacimiento: new Date(),
+      Nacimiento: this.createUsuario.value.Nacimiento,
       Direccion: this.createUsuario.value.Direccion,
-      EstadoCivil: this.createUsuario.value.EstadoCivil
+      EstadoCivil: this.createUsuario.value.EstadoCivil,
+      fecheCreacionStuden: new Date()
     }
     console.log(usuario)
   }
