@@ -1,26 +1,28 @@
 
 <form class="m-4" [formGroup]="formulario" (ngSubmit)="add(formulario.value)">
-  <div class="container">
+    <div class="container" >
     <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" width="100px" height="100px">
     <div class="con">
 
-      <div class="mb-3">
+      <div class="mb-3" >
         <label class="form-label form-genero">Tipo de Documento</label>
         <select class="form-select" aria-label="Default select example" formControlName="Tdocumento" required>
-          <option value="cedula">Cedula de Ciudadania</option>
-          <option value="Tarjeta Identidad">Tarjeta Identidad</option>
+          <option value="Cedula de Ciudadania">Cedula de Ciudadania</option>
+          <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
           <option value="Tarjeta Extranjera">Tarjeta Extranjera</option>
         </select>
       </div>
 
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Numero ID</label>
-          <input type="text" class="form-control" formControlName="exampleInputEmail1">
+          <label for="Identificacion" class="form-label">Numero ID</label>
+          <input type="number" class="form-control" formControlName="Identificacion">
         </div>
+
         <div class="mb-3">
           <label for="Nombres" class="form-label">Nombres</label>
           <input type="text" class="form-control" formControlName="Nombres" required>
         </div>
+        
         <div class="mb-3">
           <label for="Apellidos" class="form-label">Apellidos</label>
           <input type="text" class="form-control" formControlName="Apellidos" required>
@@ -29,25 +31,23 @@
         <div class="container-fluid" id="main-content">
           <div class="container">
               <div class="row">
+
                   <div class="genero">
-                    <label for="Apellidos" class="form-label form-genero">Seleccione el Genero</label>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox"  id="flexCheckDefault" [checked]="checkMas" (click)="onCheckedMas()">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Masculino
-                      </label>
+                    <label for="Genero" class="form-label form-genero">Seleccione el Genero</label>
+                    <div class="mb-3">
+                      <select class="form-select" aria-label="Default select example" formControlName="Genero" required >
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="NB">NB</option>
+                      </select>
                     </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox"  id="flexCheckChecked" [checked]="checkFamale" (click)="onCheckedFamale()">
-                      <label class="form-check-label" for="flexCheckChecked">
-                        Femenino
-                      </label>
-                    </div>
+
                     <div class="mb-3">
                       <label for="Nacimiento" class="form-label form-genero">Fecha Nacimiento</label>
                       <input type="date" class="form-control" formControlName="Nacimiento">
                     </div>
-                </div>
+              
+                  </div>
 
                 </div>
                   <div class="mb-3">
@@ -55,15 +55,27 @@
                     <input type="text" class="form-control" formControlName="Direccion">
                   </div>
 
+
                   <div class="mb-3">
-                    <label>Estado Civil</label>
+                    <label for="Celular" class="form-label">Numero de Celular</label>
+                    <input type="number" class="form-control" formControlName="Celular" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="Correo" class="form-label">Correo</label>
+                    <input type="text" class="form-control" formControlName="Correo" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="EstadoCivil" class="form-label form-genero">Estado Civil</label>
                     <select class="form-select" aria-label="Default select example" formControlName="EstadoCivil" required>
-                      <option value="Soltero">Soltero</option>
-                      <option value="Casado">Casado</option>
+                      <option value="Soltero(a)">Soltero(a)</option>
+                      <option value="Casado(a)">Casado(a)</option>
                     </select>
                   </div>
           </div>
-      </div>
+        </div>
+
           <hr>
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
