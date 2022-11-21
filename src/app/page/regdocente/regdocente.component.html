@@ -1,7 +1,6 @@
 <table class="formulario">
     <thead>
         <tr>
-            <th scope="col">#</th>
             <th scope="col">N° Identificacion</th>
             <th scope="col">Tipo de documento</th>
             <th scope="col">Nombre</th>
@@ -15,17 +14,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr >
-            <td scope="row"></td>
-            <td scope="col"> </td>
-            <td scope="col">  </td>
-            <td scope="col"> </td>
-            <td scope="col"> </td>
-            <td scope="col"> </td>
-            <td scope="col"> </td>
-            <td scope="col"> </td>
-            <td scope="col"> </td>
-            <td scope="col"> </td>
+        <tr  *ngFor="let studen of estudiantes">
+            <td scope="col">{{studen.attributes.eIdentificacion}}</td>
+            <td scope="col">{{studen.attributes.eTipodocumento}}  </td>
+            <td scope="col">{{studen.attributes.eNombre}} </td>
+            <td scope="col">{{studen.attributes.eApellido}} </td>
+            <td scope="col">{{studen.attributes.eGenero}}</td>
+            <td scope="col">{{studen.attributes.eFechaNacimiento}} </td>
+            <td scope="col">{{studen.attributes.eCorreo}} </td>
+            <td scope="col">{{studen.attributes.eCelular}} </td>
+            <td scope="col">{{studen.attributes.eDireccion}} </td>
+            <td scope="col">{{studen.attributes.eEstadoCivil}} </td>
         </tr>
     </tbody>
 </table>
