@@ -45,13 +45,6 @@ export class RegstudenComponent  {
 
   }
  
-  /*para agregar un formulario
-  get f(){
-      return this.formulario.controls;
-  }
-  
-  */
-  
 
   add(values: { Nombres: any; Celular: any; Correo: any; Apellidos: any; Tdocumento: any; Nacimiento: any; Direccion: any; Genero: any; EstadoCivil: any; Identificacion: any; }){
     this.submitted=true;
