@@ -28,7 +28,35 @@ export class RegdocenteComponent implements OnInit{
 
    eliminarEstudiante(estudiante:any){
     //console.log(estudiante)
-    this.estudianteService.eliminar(estudiante).subscribe(newData => {this.estudiantes = newData});
+    this.estudianteService.eliminar(estudiante).subscribe();
     
   }
+
+
+  actualizar(estudiante:number){
+    /* console.log(estudiante);
+    console.log(`eIdentificacion-${estudiante}`);
+    console.log(document.getElementById(`eIdentificacion-${estudiante}`)); */
+    let data:any = {data:{
+    eNombre: document.getElementById(`eNombre-${estudiante}`)?.innerText,           
+    /* eCelular: document.getElementById(``),          
+    eCorreo: document.getElementById(``),           
+    createdAt: document.getElementById(``),       
+    updatedAt: document.getElementById(``),       
+    publishedAt: document.getElementById(``),     
+    eApellido: document.getElementById(``),         
+    eFechaNacimiento: document.getElementById(``), 
+    eDireccion: document.getElementById(``),        
+    eTipodocumento: document.getElementById(``),    
+    eGenero: document.getElementById(``),           
+    eEstadoCivil: document.getElementById(``), */      
+    eIdentificacion: Number(document.getElementById(`eIdentificacion-${estudiante}`)?.innerText),
+    }};
+    console.log(data);
+
+    this.estudianteService.editar(estudiante,data).subscribe();
+  }
+
+
 }
+

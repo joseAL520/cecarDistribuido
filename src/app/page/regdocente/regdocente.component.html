@@ -1,5 +1,5 @@
-<table class="formulario">
-    <thead>
+<table class="table" >
+    <thead class="thead-dark">
         <tr>
             <th scope="col">N° Identificacion</th>
             <th scope="col">Tipo de documento</th>
@@ -15,22 +15,22 @@
     </thead>
     <tbody>
         <tr  *ngFor="let studen of estudiantes">
-            <td scope="col">{{studen.attributes.eIdentificacion}}</td>
-            <td scope="col">{{studen.attributes.eTipodocumento}}  </td>
-            <td scope="col">{{studen.attributes.eNombre}} </td>
-            <td scope="col">{{studen.attributes.eApellido}} </td>
-            <td scope="col">{{studen.attributes.eGenero}}</td>
-            <td scope="col">{{studen.attributes.eFechaNacimiento}} </td>
-            <td scope="col">{{studen.attributes.eCorreo}} </td>
-            <td scope="col">{{studen.attributes.eCelular}} </td>
-            <td scope="col">{{studen.attributes.eDireccion}} </td>
-            <td scope="col">{{studen.attributes.eEstadoCivil}} </td>
+            <td scope="col" contenteditable="true" id="eIdentificacion-{{studen.id}}">{{studen.attributes.eIdentificacion}}</td>
+            <td scope="col" contenteditable="true" id="eTipodocumento-{{studen.id}}">{{studen.attributes.eTipodocumento}}  </td>
+            <td scope="col" contenteditable="true" id="eNombre-{{studen.id}}">{{studen.attributes.eNombre}} </td>
+            <td scope="col" contenteditable="true" id="eApellido-{{studen.id}}">{{studen.attributes.eApellido}} </td>
+            <td scope="col" contenteditable="true" id="eGenero-{{studen.id}}">{{studen.attributes.eGenero}}</td>
+            <td scope="col" contenteditable="true" id="eFechaNacimiento-{{studen.id}}">{{studen.attributes.eFechaNacimiento}} </td>
+            <td scope="col" contenteditable="true" id="eCorreo-{{studen.id}}">{{studen.attributes.eCorreo}} </td>
+            <td scope="col" contenteditable="true" id="eCelular-{{studen.id}}">{{studen.attributes.eCelular}} </td>
+            <td scope="col" contenteditable="true" id="eDireccion-{{studen.id}}">{{studen.attributes.eDireccion}} </td>
+            <td scope="col" contenteditable="true" id="eEstadoCivil-{{studen.id}}">{{studen.attributes.eEstadoCivil}} </td>
 
 <!-- (click)="loadArticleToEdit(article.id)" 
     (click)="deleteArticle(article.id)"
 -->
             <td>
-                <button type="button" >Edit</button>
+                <button type="button" (click)="actualizar(this.studen.id)" >Guardar Edit</button>
               </td>
               <td>
                 <button type="button" class="btn btn-danger" (click)="eliminarEstudiante(this.studen.id)" >Delete</button>

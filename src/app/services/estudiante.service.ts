@@ -25,8 +25,14 @@ export class EstudianteService {
 
   eliminar(id: number){
     
-    this.url = `${this.url}/${id}`;
-    return this.HttpClient.delete(this.url);
+    let url = `${this.url}/${id}`;
+    return this.HttpClient.delete(url);
+  }
+
+  editar(id: number, data:any){
+    let url = `${this.url}/${id}`;
+    console.log(data);
+    return this.HttpClient.put<RequerReponsive>(url, data);
   }
 
 
