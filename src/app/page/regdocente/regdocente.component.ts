@@ -34,23 +34,19 @@ export class RegdocenteComponent implements OnInit{
 
 
   actualizar(estudiante:number){
-    /* console.log(estudiante);
-    console.log(`eIdentificacion-${estudiante}`);
-    console.log(document.getElementById(`eIdentificacion-${estudiante}`)); */
+  
     let data:any = {data:{
-    eNombre: document.getElementById(`eNombre-${estudiante}`)?.innerText,           
-    /* eCelular: document.getElementById(``),          
-    eCorreo: document.getElementById(``),           
-    createdAt: document.getElementById(``),       
-    updatedAt: document.getElementById(``),       
-    publishedAt: document.getElementById(``),     
-    eApellido: document.getElementById(``),         
-    eFechaNacimiento: document.getElementById(``), 
-    eDireccion: document.getElementById(``),        
-    eTipodocumento: document.getElementById(``),    
-    eGenero: document.getElementById(``),           
-    eEstadoCivil: document.getElementById(``), */      
     eIdentificacion: Number(document.getElementById(`eIdentificacion-${estudiante}`)?.innerText),
+    eTipodocumento: String(document.getElementById(`eTipodocumento-${estudiante}`)?.innerText) ,  
+    eNombre: String(document.getElementById(`eNombre-${estudiante}`)?.innerText), 
+    eApellido:String(document.getElementById(`eApellido-${estudiante}`)?.innerText),       
+    eCelular:Number(document.getElementById(`eCelular-${estudiante}`)?.innerText) ,          
+    eCorreo: String(document.getElementById(`eCorreo-${estudiante}`)?.innerText),                
+    eFechaNacimiento: String(document.getElementById(`eFechaNacimiento-${estudiante}`)?.innerText), 
+    eDireccion: String(document.getElementById(`eDireccion-${estudiante}`)?.innerText),         
+    eGenero: String (document.getElementById(`eGenero-${estudiante}`)?.innerText),           
+    eEstadoCivil: String(document.getElementById(`eEstadoCivil-${estudiante}`)?.innerText),       
+    
     }};
     console.log(data);
 
