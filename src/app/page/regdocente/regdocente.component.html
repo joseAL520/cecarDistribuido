@@ -1,4 +1,4 @@
-<table class="table" >
+<table class="table table-striped" >
     <thead class="thead-dark">
         <tr>
             <th scope="col">N° Identificacion</th>
@@ -26,11 +26,8 @@
             <td scope="col" contenteditable="true" id="eDireccion-{{studen.id}}">{{studen.attributes.eDireccion}} </td>
             <td scope="col" contenteditable="true" id="eEstadoCivil-{{studen.id}}">{{studen.attributes.eEstadoCivil}} </td>
 
-<!-- (click)="loadArticleToEdit(article.id)" 
-    (click)="deleteArticle(article.id)"
--->
             <td>
-                <button type="button" (click)="actualizar(this.studen.id)" >Guardar</button>
+                <button type="button" class="btn btn-primary" (click)="actualizar(this.studen.id)" >Guardar</button>
               </td>
               <td>
                 <button type="button" class="btn btn-danger" (click)="eliminarEstudiante(this.studen.id)" >Delete</button>
