@@ -23,12 +23,17 @@ export class RegdocenteComponent implements OnInit{
      this.estudiantes = estudiantes;
     });
 
-    this.eliminarEstudiante
+    //this.eliminarEstudiante
+    
   }
 
    eliminarEstudiante(estudiante:any){
     //console.log(estudiante)
-    this.estudianteService.eliminar(estudiante).subscribe();
+    this.estudianteService.eliminar(estudiante).subscribe(resp=>{
+      alert("Estudiante Eliminado");
+      location.reload();
+    });
+
     
   }
 
