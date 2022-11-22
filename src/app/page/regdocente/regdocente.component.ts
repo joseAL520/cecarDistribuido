@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EstudianteService } from '../../services/estudiante.service';
-import { Estudiante } from '../../model/estudiante';
+
+
 
 
 @Component({
@@ -21,5 +22,13 @@ export class RegdocenteComponent implements OnInit{
       console.log(estudiantes);
      this.estudiantes = estudiantes;
     });
+
+    this.eliminarEstudiante
+  }
+
+   eliminarEstudiante(estudiante:any){
+    //console.log(estudiante)
+    this.estudianteService.eliminar(estudiante).subscribe(newData => {this.estudiantes = newData});
+    
   }
 }

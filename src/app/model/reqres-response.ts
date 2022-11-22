@@ -1,3 +1,5 @@
+// https://app.quicktype.io
+// se usae esta pagina para que nos arregle los exporte interface para el uso de esta
 export interface RequerReponsive {
     
     page:      number;
@@ -10,7 +12,7 @@ export interface RequerReponsive {
 }
 
 interface add {
-   // id:         number;
+    id:         number;
   
 }
 

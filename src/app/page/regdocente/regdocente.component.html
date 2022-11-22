@@ -25,6 +25,17 @@
             <td scope="col">{{studen.attributes.eCelular}} </td>
             <td scope="col">{{studen.attributes.eDireccion}} </td>
             <td scope="col">{{studen.attributes.eEstadoCivil}} </td>
+
+<!-- (click)="loadArticleToEdit(article.id)" 
+    (click)="deleteArticle(article.id)"
+-->
+            <td>
+                <button type="button" >Edit</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="eliminarEstudiante(this.studen.id)" >Delete</button>
+              </td>
+
         </tr>
     </tbody>
 </table>
